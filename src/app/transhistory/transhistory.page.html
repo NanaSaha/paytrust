@@ -1,0 +1,276 @@
+
+
+
+<ion-content>
+
+  <div class="main-sec">
+
+
+    <h4 class="transH1">Transactions</h4>
+
+  </div>
+
+
+  <div class="forSlides">
+    
+
+
+
+</div>
+
+
+
+
+<ion-segment [(ngModel)]="mySegment" (ionChange)="segmentChanged()">
+  <ion-segment-button value="travelrequest">
+      Pending
+  </ion-segment-button>
+  <ion-segment-button value="approverequest">
+      Joined
+  </ion-segment-button>
+  <ion-segment-button value="approveexception">
+     History
+  </ion-segment-button>
+</ion-segment>
+
+
+<div [ngSwitch]="mySegment">
+
+
+  <div *ngSwitchCase="'travelrequest'">
+    <div *ngIf="resp_code_pending == '101'">
+      <div class="">
+        <img src="../assets/img/frame.png" class="crossImg">
+      </div>
+      
+      
+      <div>
+      <p style="text-align: center; color: #224d0e;">You have no ongoing transactions. Hit New Transaction to get started, or Join Transaction to see pending ones.
+      </p>
+      </div>
+      </div>
+
+
+      <div *ngIf="resp_code_pending != '101'">
+        <div class="itemized" *ngFor="let item of trans_list_pending">
+          <ion-row>
+            <ion-col size="9">
+              <h3 style="font-weight: 800;" class="left-textHeader" >{{item.item_name}}</h3>  
+            </ion-col>
+      
+            <ion-col size="3"  *ngIf="item.status == 'pending'">
+              <span class="right-Img"> <img src="../assets/img/recieve2.png"></span>
+            </ion-col>
+      
+          
+      
+            <ion-col size="6">
+              <span class="left-text" >Person’s name</span>  
+            </ion-col>
+      
+            <ion-col size="6">
+              <span class="right-text">{{item.person_name}}</span>
+            </ion-col>
+      
+            <ion-col size="6">
+              <span class="left-text" >Quatity</span>  
+            </ion-col>
+      
+            <ion-col size="6">
+              <span class="right-text">{{item.item_quantity}}</span>
+            </ion-col>
+            <ion-col size="6">
+              <span class="left-text" >Amount</span>  
+            </ion-col>
+      
+            <ion-col size="6">
+              <span class="right-text">GHS{{item.amount}}.00</span>
+            </ion-col>
+            <ion-col size="6">
+              <span class="left-text" >Date</span>  
+            </ion-col>
+      
+            <ion-col size="6">
+              <span class="right-text">{{item.created_at | date: 'mediumDate'}}</span>
+            </ion-col>
+          
+          </ion-row>
+          <hr style="border-width: 1px; color: #E8EEEE">
+      
+          <ion-row>
+          <ion-col size="9">
+            <span class="left-text">Transaction Progress</span>
+          </ion-col>
+          <ion-col size="3">
+             
+          </ion-col>
+        
+        </ion-row>
+          <ion-progress-bar value=".45">
+         
+          </ion-progress-bar>
+      
+          <div style="padding-top: 4%">
+          <!-- <ion-button class="whitee_gg"  > <img src="../assets/img/user-add.png" style="padding-right: 10px;" > New
+            Chat with other parties </ion-button> -->
+
+            <angular4-paystack [key]="'pk_live_caabde47a485606dc025e27220d3c03548aa40f2'" [email]="person_email"
+            [amount]="item.amount * item.item_quantity  * 100" [ref]="random_id"  [channels]="channels" [currency]="'GHS'"
+            [class]="'payment'" (close)="paymentCancel()" (callback)="paymentDone($event)">Pay with Mobile
+            Money/Card</angular4-paystack>
+          </div>
+        </div>
+      
+      </div>
+</div>
+
+<ion-list *ngSwitchCase="'approverequest'">
+  <div *ngIf="resp_code_joined != '101' || trans_list_joined.length > 0">
+  <div class="itemized" *ngFor="let item of trans_list_joined">
+    <ion-row>
+      <ion-col size="9">
+        <h3 style="font-weight: 800;" class="left-textHeader" >{{item.item_name}}</h3>  
+      </ion-col>
+
+      <ion-col size="3"  *ngIf="item.status == 'pending'">
+        <span class="right-Img"> <img src="../assets/img/recieve2.png"></span>
+      </ion-col>
+
+      <ion-col size="3"  *ngIf="item.status != 'pending'">
+        <span class="right-Img"> <img src="../assets/img/receive.png"></span>
+      </ion-col>
+
+      <ion-col size="6">
+        <span class="left-text" >Person’s name</span>  
+      </ion-col>
+
+      <ion-col size="6">
+        <span class="right-text">{{item.person_name}}</span>
+      </ion-col>
+
+      <ion-col size="6">
+        <span class="left-text" >Quatity</span>  
+      </ion-col>
+
+      <ion-col size="6">
+        <span class="right-text">{{item.item_quantity}}</span>
+      </ion-col>
+      <ion-col size="6">
+        <span class="left-text" >Amount</span>  
+      </ion-col>
+
+      <ion-col size="6">
+        <span class="right-text">GHS{{item.amount}}.00</span>
+      </ion-col>
+      <ion-col size="6">
+        <span class="left-text" >Date</span>  
+      </ion-col>
+
+      <ion-col size="6">
+        <span class="right-text">{{item.created_at | date: 'mediumDate'}}</span>
+      </ion-col>
+    
+    </ion-row>
+    <hr style="border-width: 1px; color: #E8EEEE">
+
+    <ion-row>
+    <ion-col size="9">
+      <span class="left-text">Transaction Progress</span>
+    </ion-col>
+    <ion-col size="3">
+        
+    </ion-col>
+  
+  </ion-row>
+    <ion-progress-bar value=".45">
+     
+    </ion-progress-bar>
+
+    <!-- <div style="padding-top: 4%">
+    <ion-button class="whitee_gg"  > <img src="../assets/img/user-add.png" style="padding-right: 10px;" > New
+      Chat with other parties </ion-button>
+    </div> -->
+  </div>
+
+</div>
+
+<div *ngIf="resp_code_joined == '101' || trans_list_joined.length == '0'">
+<div class="">
+  <img src="../assets/img/frame.png" class="crossImg">
+</div>
+
+
+<div>
+<p style="text-align: center; color: #224d0e;">You have no ongoing transactions. Hit New Transaction to get started, or Join Transaction to see pending ones.
+</p>
+</div>
+</div>
+ 
+</ion-list>
+
+<div *ngSwitchCase="'approveexception'">
+  <div *ngIf="resp_code != '101'">
+  <div class="itemizedHis">
+
+
+
+
+    <div class="container" *ngFor="let item of trans_list">
+
+    <div *ngIf="item.status != 'pending'" class="container">
+      <img src="../assets/img/incoming.png">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">{{item.item_name}}</h4>
+        <p class="subFontTrans">Payment received on {{item.created_at | date: 'mediumDate'}}</p>
+      </div>
+
+      
+    </div>
+
+    <div *ngIf="item.status == 'pending'" class="container">
+      <img src="../assets/img/money.png">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">{{item.item_name}}</h4>
+        <p class="subFontTrans">Money sent on {{item.created_at | date: 'mediumDate'}}</p>
+      </div>
+    </div>
+
+   
+      
+    </div>
+
+    <hr style="border-width: 1px;">
+   
+    
+  
+  </div> 
+</div> 
+
+<div *ngIf="resp_code == '101'">
+  <div class="">
+    <img src="../assets/img/frame.png" class="crossImg">
+  </div>
+  
+  
+  <div>
+  <p style="text-align: center; color: #224d0e;">You have no ongoing transactions. Hit New Transaction to get started, or Join Transaction to see pending ones.
+  </p>
+  </div>
+  </div>
+ 
+
+
+
+
+ 
+
+
+
+</div>
+
+</div>
+
+
+</ion-content>

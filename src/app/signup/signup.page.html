@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  <div class="text-container">
+    <h3 class="headerFont">New to <span style="color: #164F50;font-weight: bold;"> PayTrust? </span></h3>
+
+    <p class="subFonts">Enter the email address and password you use to
+      sign up to PayTrust.</p>
+  </div>
+  <!-- <img src="https://escrow.devdexsoftware.com/1715761759642.jpeg" width="100%" >
+     -->
+  <div class="main-sec">
+   
+    <div class="notblock">
+    
+      <!-- <img src="../assets/img/profIcon.svg" width="100%" *ngIf="images.length == 0"> -->
+
+      <ion-icon name="card-outline"  *ngIf="images.length == 0" style="font-size: 100px;"></ion-icon>
+      <img src="{{images[images.length - 1].data}}" width="100%" *ngIf="images.length > 0">
+     
+    </div>
+  </div>
+  <ion-button fill="primary" expand="full" color="light" (click)="selectImage()" style="margin-top: -5%;
+  margin-bottom: 10%;">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Upload Your Ghana Card
+  </ion-button>
+
+  <!-- <ion-button fill="secondary" expand="full" color="light" (click)="startUpload(images[images.length - 1])"  style="margin-top: -5%;
+  margin-bottom: 10%;" *ngIf="images.length > 0">
+    <ion-icon slot="start" name="camera"></ion-icon>
+   push
+  </ion-button> -->
+
+
+  
+
+  <form [formGroup]="signupForm">
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input placeholder="Enter Your Full name" formControlName="fullname"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input placeholder="Enter Your Email" formControlName="email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input type="number" placeholder="Enter Your Phone number" formControlName="phone"></ion-input>
+    </ion-item>
+ 
+    <br>
+
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input placeholder="Enter Your Location" formControlName="location"></ion-input>
+    </ion-item>
+    <br>
+   
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input type="password" placeholder="Enter Your Password" formControlName="password"></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input type="password" placeholder="Confirm Your Password" formControlName="password"></ion-input>
+    </ion-item>
+    <p style="text-align: center;margin: 20px 20px 10px 20px;">Have an account? <span
+        style="color: #3CB3B5;font-weight: bold;" (click)="login()"> Login here.</span> </p>
+    <p style="text-align: center;margin: 20px 20px 10px 20px;">By registering, you accept our <span
+        style="color: #3CB3B5;font-weight: bold;"> Terms & Conditions </span> and
+      <span style="color: #164F50;font-weight: bold;"> Privacy Policy.</span>
+    </p>
+
+    <div class="btnsTxt">
+
+      <ion-button (click)="signup(images[images.length - 1])" [disabled]="!this.signupForm.valid">Sign Up</ion-button>
+      <p style="text-align: center;margin: 20px 20px 10px 20px;"> or</p>
+      <ion-button color="primary-contrast" class="whitee_g" (click)="google()"> <img src="../assets/img/google.jpg"
+          style="padding-right: 10px;"> Sign In with Google</ion-button>
+    </div>
+  </form>
+</ion-content>

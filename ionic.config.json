@@ -1,0 +1,7 @@
+{
+  "name": "PayTrust",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

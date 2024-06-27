@@ -1,0 +1,63 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>RESEND QR CODE</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+ 
+
+  <h4 class="txtLeft">RESEND QR CODE</h4>
+  <p class="txtLeft">Please type the phone number where you received the text message for the package and we will resend you the text again.
+  </p>
+
+  <ion-grid>  
+    <ion-item fill="outline" class="moveCenter">
+      <ion-label position="floating">Enter Phone number</ion-label>
+      <ion-input placeholder="Enter QR code"></ion-input>
+    </ion-item>
+  </ion-grid>
+
+  <ion-grid>
+
+    <ion-row>
+      <!-- <ion-col size="6">
+        <div class="btnsTxt">
+          <ion-button id="diffBtn"> Resend
+          </ion-button>
+
+        </div>
+      </ion-col> -->
+
+      <ion-col size="12" >
+        <div class="btnsTxt">
+          <ion-button (click)="openBox()"> Submit
+          </ion-button>
+
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <div >
+    <img src="../assets/img/logo.png" class="moveCenter2">
+    <img src="../assets/img/text.png" class="moveCenter2">
+    <img src="../assets/img/line.png" class="moveCenter2">
+    </div>
+</ion-footer>
+
+

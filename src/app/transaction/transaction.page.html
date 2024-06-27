@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="text-container">
+    <h3 class="headerFont">PayTrust  Transaction
+    </h3>
+    <p class="subFonts">Fill the form below to proceed. Provide clear comments on the terms of agreement for this
+      transaction.</p>
+  </div>
+
+
+
+
+  <form [formGroup]="signupForm">
+    
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input placeholder="Enter Item Name" formControlName="item_name"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input type="number" placeholder="Enter Item Quantity" formControlName="item_quantity"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-input type="number" formControlName="amount" placeholder="Enter Item Amount" labelPlacement="floating"
+        fill="outline"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-textarea formControlName="description" placeholder="Enter Item Description" labelPlacement="floating"
+        fill="outline"></ion-textarea>
+    </ion-item>
+    <br>
+
+    <hr style="border-width: 1px;" class="warn">
+   <h5 class="warn">Who do you want to do business with?</h5>
+   <ion-item fill="outline" class="moveCenter">
+    <ion-input placeholder="Enter person's name" formControlName="person_name"></ion-input>
+  </ion-item>
+  <br>
+
+  <ion-item fill="outline" class="moveCenter">
+
+    <ion-input placeholder="Enter person's email" formControlName="person_email"></ion-input>
+  </ion-item>
+  <h5 class="warn">An email notification will be sent to this person to join the transaction to confirm transaction</h5>
+  <br>
+
+
+    <br>
+
+
+    <!-- <ion-button (click)="fromTrans()">Proceed</ion-button> -->
+    <div class="btnsTxt">
+    
+      <ion-button (click)="seller()" [disabled]="!this.signupForm.valid" ><ion-icon slot="end" name="arrow-forward-outline" ></ion-icon>  Proceed</ion-button>
+
+    </div>  
+  </form>
+</ion-content>

@@ -1,0 +1,122 @@
+
+
+<ion-content>
+ 
+  <div class="main-sec">
+
+        <div class="notblock">
+         
+         
+          <img src="../assets/img/profIcon.svg" width="100%"  *ngIf="profile_pic == 'null'">
+          <img src="https://escrow.devdexsoftware.com/{{profile_pic}}" width="100%"  *ngIf="profile_pic != 'null'" >
+
+          <!-- <img src="../assets/img/profIcon.svg" width="100%" *ngIf="images.length == 0">
+          <img src="{{images[images.length - 1].data}}" width="100%" *ngIf="images.length > 0">
+          -->
+          <h4 style="color: rgb(206, 48, 48); font-size: 18px;font-weight: 700;text-align: center;">Your Profile</h4>
+      
+        </div> 
+  </div>
+
+  <h4 style="padding-top: 20%;color: #164F50; font-size: 18px;font-weight: 700;text-align: center;">{{fullname}}</h4>
+  
+  <ion-row style="padding-top: 5%;">
+    <ion-button fill="primary" expand="full" color="light" (click)="selectImage()" style="margin-top: -5%;
+    margin-bottom: 10%;">
+      <ion-icon slot="start" name="camera"></ion-icon>
+      Upload Your Profile Pic
+    </ion-button>
+    
+    <ion-col size="6">
+      <ion-button class="whitee_g" (click)="edit()"  > Edit Profile </ion-button>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-button class="whitee_g" (click)="invite()">  Invite Others</ion-button>
+    </ion-col>
+
+  
+
+  </ion-row>
+
+  <div class="itemizedHis">
+    <div class="container">
+      <img src="../assets/img/paymentMethod.svg">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">Payment Methods</h4>
+          </div>
+      <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+    </div>
+  
+  </div> 
+
+  <div class="itemizedHis">
+    <div class="container" (click)="trans()">
+      <img src="../assets/img/trans.png">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">Transaction History</h4>
+          </div>
+      <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+    </div>
+  
+  </div> 
+
+  <div class="itemizedHis">
+    <div class="container">
+      <img src="../assets/img/info.svg">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">Help Center</h4>
+          </div>
+      <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+    </div>
+  
+  </div> 
+
+
+  <div>
+    <h4 class="headerTxt">Settings</h4>
+  </div>
+
+  <div class="itemizedHis" style="background-color: #f5f5f5;margin-bottom: 10%">
+    <div class="container" (click)="trans()">
+      <img src="../assets/img/notee.svg">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">Notifications</h4>
+         </div>
+      <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+    </div>
+    <hr style="border-width: 1px;">
+    <div class="container">
+      <img src="../assets/img/preference.svg">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">Preferences</h4>
+       </div>
+      <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+    </div>
+    <hr style="border-width: 1px;">
+    <div class="container">
+      <img src="../assets/img/security.svg">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">Security</h4>
+       </div>
+      <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+    </div>
+  </div>
+
+  
+  <div class="container2" (click)="logout()">
+    <img src="../assets/img/logout.svg" class="img"alt="Your Image">
+    <span>Logout</span>
+  </div>
+
+</ion-content>
+
+
+
+

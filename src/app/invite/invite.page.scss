@@ -1,0 +1,95 @@
+:host {
+    --border-radius: 4px !important;
+}
+
+.imgMove{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20%;
+}
+
+
+
+.moveCenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+}
+
+.btnsTxt{
+    margin-top: 10%;
+}
+
+.txtLeft{
+    // text-align: left;
+    margin-left: 10%;
+    color: #1D4355;
+    font-size: 30px;
+    margin-bottom: 10%;
+
+}
+
+#pushLeft{
+    float: right;
+    margin-right: 10%;
+    font-style: italic;
+}
+
+ion-button{
+    --background: #164F50;
+    --background-hover: #164F50;
+    --background-activated: #164F50;
+    --background-focused: #164F50;
+    --color: rgb(255, 255, 255);
+    --border-radius: 30px;
+    --border-style: solid;
+    --border-width: 1px;
+  //  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: #224d0e;
+    --padding-top: 23px;
+    --padding-bottom: 23px;
+    width: 90%;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 22px;
+    text-transform: none;
+}
+
+
+.headerFont{
+    text-align: left;
+font-size: 28px;
+padding-left: 10px;
+font-family: Clash;
+  }
+
+  .subFonts{
+    text-align: left;
+    padding-left: 12px;
+    color: #576B74
+  }
+
+
+  .whitee_g {
+    --background: #E8EEEE;
+    --background-hover: #E8EEEE --background-activated: #E8EEEE --background-focused: #E8EEEE;
+    --color: #164F50;
+    --border-radius: 19px;
+    --border-style: solid;
+    --border-color: #E8EEEE;
+    --border-width: 1px;
+    --padding-top: 23px;
+    --padding-bottom: 23px;
+    width: 90%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-transform: none;
+}

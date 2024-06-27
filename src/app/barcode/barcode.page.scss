@@ -1,0 +1,139 @@
+.text-container {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.headerFont {
+    text-align: left;
+    font-size: 25px;
+    padding-left: 10px;
+    font-family: Clash;
+    color: #224d0e;
+}
+
+.subFonts {
+    text-align: left;
+    padding-left: 10px;
+    color: #576B74;
+}
+
+
+
+.moveCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 10%;
+
+}
+
+.moveCenter2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+
+}
+
+.btnsTxt {
+    margin-top: 10%;
+    margin-right: 8%;
+}
+
+.txtLeft {
+    // text-align: left;
+    margin-left: 6%;
+    color: #1D4355;
+    font-size: 20px;
+    margin-bottom: 0%;
+    margin-top: 10%;
+
+
+
+}
+
+#pushLeft {
+    float: right;
+    margin-right: 10%;
+    font-style: italic;
+}
+
+ion-button {
+    --background: #164F50;
+    --background-hover: #164F50;
+    --background-activated: #164F50;
+    --background-focused: #164F50;
+    --color: rgb(255, 255, 255);
+    --border-radius: 30px;
+    --border-style: solid;
+    --border-width: 1px;
+    //  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: #224d0e;
+    --padding-top: 23px;
+    --padding-bottom: 23px;
+    width: 90%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 22px;
+    text-transform: none;
+}
+
+ion-item {
+    margin-left: 5%;
+    width: 90%
+}
+
+
+
+ion-card-header {
+    --background: #1D4355;
+    --color: rgb(255, 255, 255);
+}
+
+ion-card-title,
+ion-card-subtitle {
+    --color: rgb(255, 255, 255);
+}
+
+ion-footer {
+    background: white;
+    border-color: white;
+}
+
+ion-card-header+.card-content-md {
+    padding-top: 24px;
+}
+
+ion-radio::part(container) {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+    border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+    background: none;
+    transition: none;
+    transform: none;
+    border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+    background: #164F50;
+    border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+    width: 6px;
+    height: 10px;
+
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-color: #fff;
+
+    transform: rotate(45deg);
+}

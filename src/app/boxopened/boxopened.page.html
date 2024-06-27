@@ -1,0 +1,50 @@
+<ion-content>
+
+  <div class="text-container">
+    <h3 class="headerFont">Join PayTrust Transaction
+    </h3>
+    <p class="subFonts">Please select a PayTrust Transaction Invitation to see the details and terms proposed. You may
+      decide to join the transaction or Cancel/Counter.</p>
+  </div>
+
+
+  <div *ngIf="resp_code != '101'">
+
+  <ion-radio-group (ionChange)="radioGroupChange($event)">
+  <div class="itemized" *ngFor="let item of trans_list">
+  <div class="container">
+    <!-- <img src="../assets/img/hook.png" alt="Image Description"> -->
+    <ion-radio slot="end" value="{{item.transaction_id}}" ></ion-radio>
+    <div class="text-content">
+      <h4>{{item.item_name}}</h4>
+      <p class="subFontsc">New transaction created for {{item.item_name}}
+        on {{item.created_at | date: 'mediumDate'}}.<span style="color: #34C759">GHS{{item.amount}}.00</span></p>
+     
+      </div>
+      <br>
+   
+  </div>
+  
+</div> 
+</ion-radio-group>
+</div>
+<br>
+
+<div *ngIf="resp_code == '101'">
+  <div class="">
+    <img src="../assets/img/frame.png" class="crossImg">
+  </div>
+  
+  
+  <div>
+  <p style="text-align: center; color: #224d0e;">You have no ongoing transactions to join.
+  </p>
+  </div>
+  </div>
+
+
+
+
+
+  <ion-button (click)="join()" *ngIf="resp_code != '101'">Proceed</ion-button>
+</ion-content>

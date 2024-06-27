@@ -1,0 +1,136 @@
+.moveCenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -0%;
+    // width: 50%;
+
+}
+
+.btnsTxt{
+    margin-top: 20%;
+}
+
+
+.toolbar{
+  padding-top: 50px !important; 
+}
+
+ion-button{
+    --background: #164F50;
+    --background-hover: #164F50;
+    --background-activated: #164F50;
+    --background-focused: #164F50;
+    --color: rgb(255, 255, 255);
+    --border-radius: 30px;
+    --border-style: solid;
+    --border-width: 1px;
+  //  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: #224d0e;
+    --padding-top: 23px;
+    --padding-bottom: 23px;
+    width: 90%;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 22px;
+    text-transform: none;
+}
+
+.whitee{
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+    --color: #164F50;
+    --border-radius: 30px;
+    --border-style: solid;
+    --border-width: 1px;
+   // --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: #224d0e;
+    --padding-top: 23px;
+    --padding-bottom: 23px;
+    width: 90%;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 22px;
+    text-transform: none;
+}
+
+.whitee_g{
+    --background: #ffffff;
+    --background-hover: #ffffff;
+    --background-activated: #ffffff;
+    --background-focused: #ffffff;
+    --color: #164F50;
+    --border-radius: 30px;
+    --border-style: solid;
+    --border-color: #d7d7d7;
+    --border-width: 1px;
+   
+    --ripple-color: #224d0e;
+    --padding-top: 23px;
+    --padding-bottom: 23px;
+    width: 90%;
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-transform: none;
+}
+
+.btn-positions{
+    padding-bottom: 10%
+}
+
+
+
+    .swiper {
+      width: 100%;
+      height: 70%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column  
+      
+    }
+
+   
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .text-container {
+        margin-top: -27%;
+        margin-bottom: 5%;
+    }
+      
+
+      .headerFont{
+        text-align: left;
+    font-size: 45px;
+    padding-left: 10px;
+    font-family: Clash;
+      }
+
+      .subFonts{
+        text-align: left;
+        padding-left: 10px;
+      }
+
+    
+ 

@@ -1,0 +1,121 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  <div class="text-container">
+    <h3 class="headerFont"> Transaction Preview
+    </h3>
+    <p class="subFonts">Carefully review the PayTrust Transaction details below.</p>
+  </div>
+
+  
+<div class="warn">
+  <ion-row style="line-height: 2.2;"  *ngFor="let item of trans_list">
+
+
+
+    <ion-col size="6" class="asshh">
+      Transaction Summary
+    </ion-col>
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+   
+    </ion-col>
+
+
+
+    <ion-col size="6" class="asshh">
+      Person's Name:
+    </ion-col>
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+    {{item.person_name}}
+    </ion-col>
+
+    <ion-col size="6" class="asshh">
+      Person's Email:
+    </ion-col>
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+    {{item.person_email}}
+    </ion-col>
+
+
+    <ion-col size="6" class="asshh">
+      Item name:
+    </ion-col>
+    
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+      {{item.item_name}}
+    </ion-col>
+
+    <ion-col size="6" class="asshh">
+      Item description:
+    </ion-col>
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+      {{item.description}}
+    </ion-col>
+
+    <ion-col size="6" class="asshh">
+      Amount:
+    </ion-col>
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+      GHS{{item.amount}}
+    </ion-col>
+    <ion-col size="6" class="asshh">
+      Item quantity:
+    </ion-col>
+
+    <ion-col size="6" style="color: #186a0a;font-weight: 800;">
+     {{item.item_quantity}}
+    </ion-col>
+
+  
+    
+  </ion-row>
+<hr style="border-width: 1px;">
+<ion-row  *ngFor="let item2 of trans_list">
+  <ion-col size="6" class="asshh">
+    Total:
+  </ion-col>
+  <ion-col size="6" class="asshh">
+    <b style="color: red">GHS {{item2.item_quantity * item2.amount}}</b>
+  </ion-col>
+</ion-row>
+<br>
+</div>
+
+<br>
+
+<div class="infoo">
+  <p>This agreement is also contract between you and the buyer</p>
+
+</div>
+
+
+
+<div class="btn-positions">
+  <ion-button (click)="join()" >Join Transaction</ion-button>
+  <ion-button color="primary-contrast" class="whitee" (click)="cancle()"> Cancel Transaction</ion-button>
+
+  
+    </div>
+
+
+</ion-content>
+
+
+

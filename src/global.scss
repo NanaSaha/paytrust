@@ -1,0 +1,262 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-item::part(native) {
+  --border-radius: 11px !important;
+  height: 50px;
+  gap: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #B3C6C6;
+  }
+
+  .label-floating.sc-ion-label-ios-h {
+    transform: translate(0, 12px) !important
+  }
+
+  :host(.item-label-floating), :host(.item-label-stacked) {
+    --min-height: 55px;
+}
+
+:host(.tab-selected) {
+  color: #ff5242;
+}
+
+ion-tab-bar{
+  color: #ff5242  !important;
+}
+
+.sc-ion-label-ios-h .sc-ion-label-ios-s .ios .hydrated{
+  color: #ff5242  !important;  
+}
+
+button.payment {
+  background: #E8EEEE;
+     color: #3A8D4F;
+  border-radius: 19px;
+  border-style: solid;
+  border-color: #E8EEEE;
+  border-width: 1px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  width: 90%;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  text-transform: none;
+}
+
+
+button.btn-primary2 {
+
+  background: #164F50;
+
+  color: rgb(255, 255, 255);
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 1px;
+
+  padding-top: 23px;
+  padding-bottom: 23px;
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px;
+  text-transform: none;
+
+}
+
+
+
+
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('/assets/fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Variable.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Variable.ttf') format('truetype');
+       font-weight: 300 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash';
+  src: url('/assets/fonts/ClashDisplay-Variable.ttf') format('truetype');
+       font-weight: 300 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'Satoshi-VariableItalic';
+  src: url('/assets/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-VariableItalic.woff') format('woff'),
+       url('/assets/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+       font-weight: 300 900;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-Light';
+  src: url('/assets/fonts/Satoshi-Light.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Light.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Light.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-LightItalic';
+  src: url('/assets/fonts/Satoshi-LightItalic.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-LightItalic.woff') format('woff'),
+       url('/assets/fonts/Satoshi-LightItalic.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('/assets/fonts/Satoshi-Regular.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Regular.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-Italic';
+  src: url('/assets/fonts/Satoshi-Italic.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Italic.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Italic.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-Medium';
+  src: url('/assets/fonts/Satoshi-Medium.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Medium.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Medium.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-MediumItalic';
+  src: url('/assets/fonts/Satoshi-MediumItalic.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-MediumItalic.woff') format('woff'),
+       url('/assets/fonts/Satoshi-MediumItalic.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('/assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Bold.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-BoldItalic';
+  src: url('/assets/fonts/Satoshi-BoldItalic.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-BoldItalic.woff') format('woff'),
+       url('/assets/fonts/Satoshi-BoldItalic.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-Black';
+  src: url('/assets/fonts/Satoshi-Black.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-Black.woff') format('woff'),
+       url('/assets/fonts/Satoshi-Black.ttf') format('truetype');
+       font-weight: 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Satoshi-BlackItalic';
+  src: url('/assets/fonts/Satoshi-BlackItalic.woff2') format('woff2'),
+       url('/assets/fonts/Satoshi-BlackItalic.woff') format('woff'),
+       url('/assets/fonts/Satoshi-BlackItalic.ttf') format('truetype');
+       font-weight: 900;
+       font-display: swap;
+       font-style: italic;
+}

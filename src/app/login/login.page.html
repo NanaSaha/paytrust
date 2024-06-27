@@ -1,0 +1,67 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+
+
+<!-- <ion-content>
+  <div >
+  <img src="../assets/img/logo.png" width="50%;" class="imgMove">
+  </div>
+
+   
+  <form [formGroup]="loginForm" >
+  <ion-item fill="outline" class="moveCenter">
+    <ion-label position="floating"><ion-icon slot="start" name="mail-outline" ></ion-icon> Email</ion-label>
+    <ion-input placeholder="Enter email"  formControlName="email"></ion-input>
+  </ion-item>
+  <br>
+
+<ion-item fill="outline"  class="moveCenter">
+  <ion-label position="floating"><ion-icon slot="start" name="lock-closed-outline" ></ion-icon> Password</ion-label>
+  <ion-input type="password"  placeholder="Enter Password" formControlName="password"></ion-input>
+</ion-item>
+<p id="pushLeft">Forgot Password?</p>
+<div class="btnsTxt">
+    <ion-button (click)="login()" [disabled]="!this.loginForm.valid"> Login</ion-button>
+ 
+</div>
+</form>
+<p style="text-align: center;">Don't have an account? <span (click)="signup()" style="color: #224d0e;font-weight: 900;">Sign Up here</span></p>
+  </ion-content> -->
+  
+  <ion-content>
+    <div class="text-container">
+      <h3 class="headerFont">Yaay! welcome back. </h3>
+      
+        <p class="subFonts">Yaay! Welcome back. Please enter your PayTrust login 
+          information.</p>
+        </div>
+
+        <form [formGroup]="loginForm" >
+          <ion-item fill="outline" class="moveCenter">
+           
+            <ion-input placeholder="Enter Your Email"  formControlName="email"></ion-input>
+          </ion-item>
+          <br>
+        
+        <ion-item fill="outline"  class="moveCenter">
+     
+          <ion-input type="password"  placeholder="Enter Your Password" formControlName="password"></ion-input>
+        </ion-item>
+        <p style="text-align: center;margin: 20px 20px 10px 20px;">Don't have an account?    <span style="color: #164F50;font-weight: bold;" (click)="signup()"> Sign Up.</span>  </p>
+      
+        <div class="btnsTxt">
+           
+            <ion-button (click)="login()" [disabled]="!this.loginForm.valid">Login</ion-button>
+        </div>
+        </form>
+    </ion-content>

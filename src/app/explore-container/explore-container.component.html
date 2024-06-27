@@ -1,0 +1,190 @@
+<ion-content>
+  <!-- <div class="test" *ngIf="mr == undefined">
+      <ion-item style="text-align: left;">
+          <h4 style="text-align: left;">
+              *No Commission Earned <span style='font-size:10px;'></span>.Complete more to unlock the commission
+          </h4>
+      </ion-item>
+  </div> -->
+
+  <div class="test" *ngIf="has_subscribed != true" >
+
+      <ion-item style="text-align: left;" *ngIf="mr != undefined">
+          <h4 style="text-align: left;">
+              Your Earnings are: <span style="color: red">₵{{mr}}</span>
+          </h4>
+      </ion-item>
+      <ion-item style="text-align: left;" *ngIf="mr == undefined">
+        <h4 style="text-align: left;">
+          Your Earnings are: <span style="color: red">₵0</span>
+        </h4>
+      </ion-item>
+
+      <ion-item style="text-align: left;">
+
+
+          <h4 style="text-align: left;">
+              Choose one of these options for you to go online and receive a ride request
+          </h4>
+      </ion-item>
+
+      <!-- <ion-list>
+          <ion-radio-group value="90" [(ngModel)]="sub_options">
+          <ion-item no-lines>
+              <ion-radio value="90"></ion-radio> &nbsp;
+              <ion-label> Pay ₵90 and drive to earn ₵600</ion-label>
+   
+          </ion-item>
+      
+          <ion-item no-lines>
+              <ion-radio value="45"></ion-radio> &nbsp;
+              <ion-label> Pay ₵45 and drive to earn ₵300</ion-label>
+            
+          </ion-item>
+
+          <ion-item no-lines>
+              <ion-radio value="0.1"></ion-radio>&nbsp;
+              <ion-label> Pay ₵22.5 and drive to earn ₵150</ion-label>
+              
+          </ion-item>
+          </ion-radio-group>
+      </ion-list> -->
+
+      <ion-list>
+        <ion-radio-group  [(ngModel)]="sub_options">
+          <ion-item no-lines *ngFor="let event of comms">
+            <ion-radio value="{{event.pay}}"></ion-radio> &nbsp;
+            <ion-label> Pay ₵{{event.pay}} and drive to earn ₵{{event.earn}}</ion-label>
+      
+          </ion-item>
+    
+        </ion-radio-group>
+      </ion-list>
+
+      
+
+      <!-- <h4>OPTIONS SELECTED:: {{sub_options}}</h4> -->
+
+
+      <div class="centerDiv2">
+          <angular4-paystack [key]="'pk_live_caabde47a485606dc025e27220d3c03548aa40f2'" [email]="email"
+              [amount]="sub_options * 100" [ref]="random_id" [channels]="channels" [currency]="'GHS'"
+              [class]="'btn-primary2'" (close)="paymentCancel()" (callback)="paymentDone($event)">Pay with Mobile
+              Money/Card</angular4-paystack>
+      </div>
+
+  </div>
+
+<div *ngIf="has_subscribed == true">
+  <ion-item style="text-align: left;" *ngIf="mr != undefined">
+      <h4 style="text-align: left;">
+          Your Earnings are: <span style="color: red">GHC {{mr}}</span>
+      </h4>
+  </ion-item>
+  <ion-item style="text-align: left;" *ngIf="mr == undefined">
+    <h4 style="text-align: left;">
+      Your Earnings are: <span style="color: red">₵0</span>
+    </h4>
+  </ion-item>
+
+  <ion-item *ngIf="ph.funds" style="text-align: left;">
+      <h4>
+          You have successfully paid
+          <span style="color: #fbb91d; font-weight: 900;">GHC {{ph.funds}} </span>so you can now drive to earn. Enjoy driving!
+      </h4>
+  </ion-item>
+</div>
+
+
+  <!-- <div *ngIf ="has_subscribed == 'subscriptions'">
+<ion-item *ngIf="ph.funds" style="text-align: center; margin-top: 20%">
+  <h4>
+    You have successfully funded
+    <span style="color: #fbb91d">GHC {{ph.funds}} </span>in your wallet. You
+    have 30 days to use it on Call4Ride. Enjoy driving!
+  </h4>
+</ion-item>
+
+<div class="centerDiv2" *ngIf="ph.funds">
+  <ion-button (click)="updateFundsO()" slot="end">
+    <ion-icon class="ion-text-center" name="ios-add"></ion-icon> Renew 30- day
+    Subscription
+  </ion-button>
+</div>
+
+
+<div style="text-align: center; margin-top: 20%" *ngIf="!ph.funds">
+  <h4>Subscribe to drive with call4ride!</h4>
+
+  <p>
+    Fund your wallet of <span style="color: #fbb91d">GHC 100 </span>and have
+    30 days to use it on Call4Ride. Enjoy driving!
+  </p>
+
+  <div class="centerDiv2">
+    <ion-button (click)="subscribe()" slot="end">
+      <ion-icon class="ion-text-center" name="ios-add"></ion-icon> Fund Wallet
+    </ion-button>
+  </div>
+</div>
+
+<div class="centerDiv2" *ngIf="funds">
+  <angular4-paystack
+    [key]="'pk_live_caabde47a485606dc025e27220d3c03548aa40f2'"
+    [email]="'nana@Call4Ride.com'"
+    [amount]="funds"
+    [ref]="random_id"
+    [channels]="channels"
+    [currency]="'GHS'"
+    (close)="paymentCancel()"
+    (callback)="paymentDone($event)"
+    >Pay GHC {{funds}} with Mobile Money/Card</angular4-paystack
+  >
+</div>
+
+ <div class="centerDiv2">
+    <ion-button (click)="chooseSubscriptiontype()" slot="end">
+      <ion-icon class="ion-text-center" name="ios-add"></ion-icon> Change Plan
+    </ion-button>
+  </div>
+</div>
+
+<div *ngIf ="has_subscribed == 'commission'">
+    <div style="text-align: center; margin-top: 20%">
+  <h4>You are on the Commision Plan</h4>
+
+  <p>
+    This mean you pay  <span style="color: #fbb91d">%15 </span> of every sale you make. Enjoy driving!
+  </p>
+
+  <div class="centerDiv2">
+    <ion-button (click)="chooseSubscriptiontype()" slot="end">
+      <ion-icon class="ion-text-center" name="ios-add"></ion-icon> Change Plan
+    </ion-button>
+  </div>
+</div>
+
+</div>
+
+  <div *ngIf ="has_subscribed == undefined">
+    <div style="text-align: center; margin-top: 20%">
+  <h4>You are currently not on any Subscription or Commission plan</h4>
+
+  <p>
+    This means you cannot go   <span style="color: #002311">ONLINE </span>and make some money. Please choose a plan and enjoy driving!
+  </p>
+
+  <div class="centerDiv2">
+    <ion-button (click)="chooseSubscriptiontype()" slot="end">
+      <ion-icon class="ion-text-center" name="ios-add"></ion-icon> Choose Subscription or Commission Plan
+    </ion-button>
+  </div>
+</div>
+
+</div> -->
+
+</ion-content>
+
+<!-- <ion-footer>
+  <img src="/assets/img/payment.png" />
+</ion-footer> -->

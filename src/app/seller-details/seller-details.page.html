@@ -1,0 +1,61 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Seller Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <!-- <div >
+  <img src="../assets/img/logo.png"  width="50%;">
+  </div> -->
+  
+   
+
+  <form [formGroup]="signupForm" style="padding-top: 10%;">
+    <ion-item fill="outline" class="moveCenter">
+
+      <ion-label position="floating">Seller Name</ion-label>
+      <ion-input placeholder="Enter Seller name" formControlName="seller_name"></ion-input>
+    </ion-item>
+    <br>
+
+  <ion-item fill="outline" class="moveCenter">
+    <ion-label position="floating">Seller Email</ion-label>
+    <ion-input placeholder="Enter seller email"  formControlName="seller_email"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline" class="moveCenter">
+    <ion-label position="floating">Seller Phone Number</ion-label>
+    <ion-input placeholder="Enter phone number" formControlName="seller_phone_number" ></ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline" class="moveCenter">
+    <ion-label position="floating">Escrow Fee</ion-label>
+    <ion-input style="color: #186a0a" formControlName="fees" value="10">$</ion-input>
+  </ion-item>
+  <br>
+  <ion-item fill="outline" class="moveCenter">
+    <ion-label position="floating">Escrow Fee Paid By</ion-label>
+    <ion-select formControlName="paid_by"
+    >
+      <ion-select-option value="buyer">Buyer</ion-select-option>
+      <ion-select-option value="merchant">Seller</ion-select-option>
+    </ion-select>
+  </ion-item>
+ 
+
+<div class="btnsTxt">
+    <ion-button (click)="preview()"  [disabled]="!this.signupForm.valid" ><ion-icon slot="end" name="arrow-forward-outline" ></ion-icon>  Continue</ion-button>
+ 
+</div>
+</form>
+  </ion-content>
+  

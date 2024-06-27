@@ -1,0 +1,51 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+
+
+  
+  <ion-content>
+    <div class="main-sec">
+
+      <div class="notblock">
+        
+       
+        <img src="../assets/img/profIcon.svg" width="100%">
+      </div>
+</div>
+<h4 style="padding-top: 5%;color: #164F50; font-size: 18px;font-weight: 300;text-align: center;">Edit Profile</h4>
+
+
+        <form  [formGroup]="signupForm" >
+          <ion-item fill="outline" class="moveCenter">
+           
+            <ion-input placeholder="Change Fullname"  formControlName="fullname" [value]="fullname" ></ion-input>
+          </ion-item>
+          <br>
+        
+        <ion-item fill="outline"  class="moveCenter">
+     
+          <ion-input type="email"  placeholder="Change Email" formControlName="email" [value]="this.email" ></ion-input>
+        </ion-item>
+
+        <br>
+        
+        <ion-item fill="outline"  class="moveCenter">
+     
+          <ion-input placeholder="Change Phone Number" formControlName="phone"  [value]="phone" ></ion-input>
+        </ion-item>
+       
+        <div class="btnsTxt">
+                    <ion-button (click)="update()">Confirm</ion-button>
+        </div>
+        </form>
+    </ion-content>

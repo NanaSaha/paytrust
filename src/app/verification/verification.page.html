@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>ID verification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4 class="opened">We need to verify your identity</h4><br>
+  <ion-segment [scrollable]="true" value="front" [(ngModel)]="type">
+    <ion-segment-button value="front">
+     1. Front
+    </ion-segment-button>
+    <ion-segment-button value="back">
+      2. Back
+    </ion-segment-button>
+    <ion-segment-button value="selfie">
+    3. Selfie
+    </ion-segment-button>
+   
+  </ion-segment>
+
+  <div [ngSwitch]="type">
+    <ion-list *ngSwitchCase="'front'">
+  <img src="../assets/img/idcard.svg" class="moveCenter2" *ngIf="selectedImage ==  undefined" (click)="onPickImage()">
+  <img src="{{selectedImage}}" class="moveCenter2Sel" *ngIf="selectedImage !=  undefined">
+
+  <p class="popened"> Please provide a Photo of the <br><span style="color: #224d0e">Front</span> of your Driver’s License</p>
+  <ion-button (click)="next()" *ngIf="selectedImage !=  undefined"><ion-icon slot="end" name="arrow-forward-outline" ></ion-icon> Next
+  </ion-button>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="btnsTxt" >
+          <ion-button  id="diffBtn" (click)="onPickImage()"><ion-icon slot="start" name="cloud-upload-outline" ></ion-icon> Upload of Front ID
+          </ion-button>
+
+        </div>
+      </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-list>
+
+<ion-list *ngSwitchCase="'back'">
+  <img src="../assets/img/back.svg" class="moveCenter2" *ngIf="selectedImage2 ==  undefined" (click)="uploadback()">
+  <img src="{{selectedImage2}}" class="moveCenter2Sel" *ngIf="selectedImage2 !=  undefined">
+
+  <p class="popened"> Please provide a Photo of the <br><span style="color: #224d0e">Back</span> of your Driver’s License</p>
+  <ion-button (click)="next2()" *ngIf="selectedImage2 !=  undefined"><ion-icon slot="end" name="arrow-forward-outline" ></ion-icon> Next
+  </ion-button>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="btnsTxt">
+          <ion-button  id="diffBtn" (click)="uploadback()"><ion-icon slot="start" name="cloud-upload-outline" ></ion-icon> Upload of Back ID
+          </ion-button>
+
+        </div>
+      </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-list>
+
+<ion-list *ngSwitchCase="'selfie'">
+  
+  <img src="../assets/img/selfie.svg" class="moveCenter2" *ngIf="selectedImage3 == undefined" (click)="uploadSelfie()">
+  <img src="{{selectedImage3}}" class="moveCenter2Sel" *ngIf="selectedImage3 !=  undefined">
+
+  <p class="popened"> Finally we just need a <br><span style="color: #224d0e">Selfie</span> of you straight on</p>
+  <ion-button (click)="login()" *ngIf="selectedImage3 !=  undefined"> Complete
+  </ion-button>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="btnsTxt">
+          <ion-button  id="diffBtn" (click)="uploadSelfie()"><ion-icon slot="start" name="camera-outline" ></ion-icon> Take Selfie
+          </ion-button>
+
+        </div>
+      </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-list>
+</div>
+
+</ion-content>

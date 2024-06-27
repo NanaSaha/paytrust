@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="text-container">
+    <h3 class="headerFont">Your PayTrust Buyer Transaction
+    </h3>
+   
+  </div>
+
+  <div class="emptyTrans">
+  <img src="../assets/img/toPy.png" class="moveCenter">
+</div>
+
+  <div class="text-container">
+    <h3 class="headerFontc">Accepted
+    </h3>
+    <p class="subFontsc">Yaay! Transaction has been sent to  for {{person_name}}. Please proceed to payment.</p>
+  </div>
+
+  <div class="btn-positions">
+   
+    <!-- <ion-button  (click)="payment()">Make Payment</ion-button> -->
+
+   
+      <angular4-paystack [key]="'pk_live_caabde47a485606dc025e27220d3c03548aa40f2'" [email]="person_email"
+          [amount]="total * 100" [ref]="random_id"  [channels]="channels" [currency]="'GHS'"
+          [class]="'btn-primary2'" (close)="paymentCancel()" (callback)="paymentDone($event)">Pay with Mobile
+          Money/Card</angular4-paystack>
+          <ion-button color="primary-contrast" class="whitee" (click)="home()"> Go Home</ion-button>
+
+
+      </div>
+</ion-content>

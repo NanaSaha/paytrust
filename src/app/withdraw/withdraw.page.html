@@ -1,0 +1,68 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+
+
+  
+  <ion-content>
+    <div class="text-container">
+      <h3 class="headerFont">Withdraw from your PayTrust </h3>
+      
+        <p class="subFonts">Enter the amount you want to withdraw from PayTrust.</p>
+        </div>
+
+        <form >
+          <ion-item fill="outline" class="moveCenter">
+           <ion-row>
+            <ion-col size="6">
+              <p style="color: rgb(211, 211, 211)">Balance: ₵2000</p>
+            </ion-col>
+            <ion-col size="6" >
+              <ion-input placeholder="Enter Amount"  ></ion-input>
+            </ion-col>
+           </ion-row>
+           
+          </ion-item>
+          <br>
+          <p style="color: #164F50;text-align: center;">Withdraw to mobile: (+233) 05****248</p>
+          <ion-item fill="outline" class="moveCenter">
+            <ion-row style="width: 100%;">
+             <ion-col size="2">
+              <img src="../assets/img/mtn.svg" class="mtnIcon">
+             </ion-col>
+             <ion-col size="6" >
+               <p>MTN Mobile Money</p>
+             </ion-col>
+             <ion-col size="4" >
+              <ion-button class="whitee_g"  >Switch </ion-button>
+            </ion-col>
+          
+            </ion-row>
+            
+           </ion-item>
+     
+           <div class="itemizedHis">
+            <div class="container">
+              <img src="../assets/img/add.svg" style="padding-top: 16px;">
+              <div class="text-content">
+              
+                <h4 class="headFontTrans">Add Debit/Credit Card</h4>
+                     </div>
+              <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+            </div>
+          
+          </div> 
+        <div class="btnsTxt">
+               <ion-button  (click)="withdraw()">Withdraw</ion-button>
+        </div>
+        </form>
+    </ion-content>

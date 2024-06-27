@@ -1,0 +1,71 @@
+<!-- 
+
+<ion-content>
+<div >
+<img src="../assets/img/logo.png" class="moveCenter">
+</div>
+
+
+
+
+
+<div class="btnsTxt">
+  <h4 style="text-align: center;color: #1D4355">Who are you?</h4>
+ 
+  <ion-button (click)="login()"><ion-icon slot="start" name="person-add-outline" ></ion-icon> A buyer</ion-button>
+  <ion-button (click)="login()"> <ion-icon  slot="start" name="bicycle-outline"></ion-icon> A Seller / Merchant</ion-button>
+
+
+</div>
+</ion-content> -->
+
+<ion-content >
+  <p style="text-align: center;padding: 1px;" class="toolbar" >  Welcome to <span
+      style="color: #164F50;font-weight: bold;">PayTrust</span> - Your Trusted Escrow Platform</p>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="../assets/img/slid1.png" class="moveCenter">
+
+        <div class="text-container">
+          <h3 class="headerFont">Get started with
+            <span style="color: #164F50;font-weight: bold;"> PayTrust </span>
+          </h3>
+          <p class="subFonts">Has someone started a PayTrust transaction already?
+            Swipe to learn how to join, or start your own PayTrust
+            transaction.</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/img/slid2.png" class="moveCenter">
+
+        <div class="text-container">
+          <h3 class="headerFont">User-friendly app
+          </h3>
+          <p class="subFonts">Ensures safe and seamless transactions between
+            customers and merchants.</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="../assets/img/slid3.png" class="moveCenter">
+
+        <div class="text-container">
+          <h3 class="headerFont">Sign up today!
+          </h3>
+          <p class="subFonts">Enjoy peace of mind while conducting
+            business transactions.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="btn-positions">
+    <ion-button (click)="signup()">Create An Accout</ion-button>
+    <ion-button color="primary-contrast" class="whitee" (click)="login()"> Login</ion-button>
+    <p style="text-align: center;margin: 20px 20px 10px 20px;"> or</p>
+    <ion-button color="primary-contrast" class="whitee_g" (click)="google()"> <img src="../assets/img/google.jpg"
+        style="padding-right: 10px;"> Sign In with Google</ion-button>
+  </div>
+</ion-content>

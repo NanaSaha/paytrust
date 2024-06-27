@@ -1,0 +1,231 @@
+<ion-content>
+
+  <div class="main-sec">
+
+
+    <h4 class="transH1">Your wallet</h4>
+
+  </div>
+
+  <ion-row style="padding-top: 5%;">
+    <ion-col size="6">
+      <div class="text-container">
+        <p class="subFonts">In Escrow
+        </p>
+        <h3 class="headerFont">₵0.00
+        </h3>
+      </div>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-button class="whitee_g"> <img src="../assets/img/withdraw.png" style="padding-right: 10px;">
+        Withdraw</ion-button>
+    </ion-col>
+
+  </ion-row>
+
+  <div class="forSlides">
+
+
+
+
+  </div>
+
+
+
+
+  <ion-segment [(ngModel)]="mySegment" (ionChange)="segmentChanged()">
+    <ion-segment-button value="travelrequest">
+      Banks and cards
+    </ion-segment-button>
+    <ion-segment-button value="approverequest">
+      Mobile Money
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+  <div [ngSwitch]="mySegment">
+
+
+    <div *ngSwitchCase="'travelrequest'">
+
+      <div>
+        <h4 class="headerTxt1">Banks and Cards</h4>
+      </div>
+
+      <div style="padding-top: 5%;">
+        <ion-row>
+          <ion-col size="5">
+            <div class="itemized">
+              <div class="">
+                <img src="../assets/img/pluss.png" class="crossImg">
+              </div>
+
+
+              <div>
+                <p style="text-align: center; color: #224d0e;font-size: 12px">Add a new bank account or card.
+                </p>
+
+              </div>
+            </div>
+          </ion-col>
+
+          <ion-col size="7">
+            <div class="img2">
+              <img src="../assets/img/card1.png">
+            </div>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+
+
+      <div class="itemizedHis">
+        <div class="container">
+          <img src="../assets/img/transs.png">
+          <div class="text-content">
+
+            <h4 class="headFontTrans">Transactions</h4>
+            <p class="subFontTrans">You can view all your transactions</p>
+          </div>
+          <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+        </div>
+
+      </div>
+
+
+      <div>
+        <h4 class="headerTxt">Card Services</h4>
+      </div>
+
+      <div class="itemizedHis">
+        <div class="container">
+          <img src="../assets/img/mcard.png">
+          <div class="text-content">
+
+            <h4 class="headFontTrans">Manage Cards</h4>
+            <p class="subFontTrans">You can view all your transactions</p>
+          </div>
+          <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+        </div>
+        <hr style="border-width: 1px;">
+        <div class="container">
+          <img src="../assets/img/walle.png">
+          <div class="text-content">
+
+            <h4 class="headFontTrans">Account Details</h4>
+            <p class="subFontTrans">You can view all your transactions</p>
+          </div>
+          <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+    <div *ngSwitchCase="'approverequest'">
+
+      <div>
+        <h4 class="headerTxt1">Mobile Accounts</h4>
+      </div>
+
+      <div style="padding-top: 5%;">
+        <ion-slides [options]="slideOpts">
+          <ion-slide>
+            <div class="itemized">
+              <div class="">
+                <img src="../assets/img/pluss.png" class="crossImg">
+              </div>
+              <div>
+                <p style="text-align: center; color: #224d0e;font-size: 12px">Add a new bank account or card.
+                </p>
+
+              </div>
+            </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="itemized">
+              
+                <div>
+                  <h4 style="text-align: center; color: #224d0e;font-size: 12px">MTN MOMO
+                  </h4>
+                </div>
+                <div class="networImg">
+                  <img src="../assets/img/momo.svg" class="momImg">
+                </div>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="itemized">
+              
+                <div>
+                  <h4 style="text-align: center; color: #224d0e;font-size: 12px">Vodafone Cash
+                  </h4>
+                </div>
+                <div class="networImg">
+                  <img src="../assets/img/vodafone.svg" class="momImg">
+                </div>
+              </div>
+            </ion-slide>
+          </ion-slides>
+       
+      </div>
+
+
+
+
+      <div class="itemizedHis">
+        <div class="container">
+          <img src="../assets/img/transs.png">
+          <div class="text-content">
+
+            <h4 class="headFontTrans">Transactions</h4>
+            <p class="subFontTrans">You can view all your transactions</p>
+          </div>
+          <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+        </div>
+
+      </div>
+
+
+      <div>
+        <h4 class="headerTxt">Mobile Money Services</h4>
+      </div>
+
+      <div class="itemizedHis">
+        <div class="container">
+          <img src="../assets/img/mcard.png">
+          <div class="text-content">
+
+            <h4 class="headFontTrans">Manage Mobile Accounts</h4>
+            <p class="subFontTrans">You can view all your transactions</p>
+          </div>
+          <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+        </div>
+        <hr style="border-width: 1px;">
+        <div class="container">
+          <img src="../assets/img/walle.png">
+          <div class="text-content">
+
+            <h4 class="headFontTrans">Account Details</h4>
+            <p class="subFontTrans">You can view all your transactions</p>
+          </div>
+          <img src="../assets/img/arrow.png" style="margin-top: 5%;">
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+</ion-content>

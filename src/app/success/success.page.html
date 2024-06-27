@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="text-container">
+    <h3 class="headerFont">
+    </h3>
+   
+  </div>
+
+
+  <div class="">
+    <img src="../assets/img/correct.png" class="moveCenter">
+  </div>
+
+  <div class="text-container">
+    <h3 class="headerFontc">Success!
+    </h3>
+    <p class="subFontsc">Transaction has been reached! Do not deliver goods/services until PayTrust confirms payment is made.</p>
+  </div>
+
+  <div class="btn-positions">
+  
+    <ion-button (click)="toPayment()">Check transaction status</ion-button>
+    <ion-button color="primary-contrast" class="whitee" (click)="cancle()"> Go Home</ion-button>
+
+  
+      </div>
+</ion-content>

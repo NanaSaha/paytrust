@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <div class="text-container">
+    <h3 class="headerFont">Your PayTrust Buyer Transaction
+    </h3>
+   
+  </div>
+
+
+  <div class="emptyTrans">
+    <img src="../assets/img/transImg.png" class="moveCenter">
+  </div>
+
+  <div class="text-container">
+    <h3 class="headerFontc">Sent!
+    </h3>
+    <p class="subFontsc">We have sent a PayTrust Transaction Invitation for your seller to confirm the terms of agreement. We will let you know when they respond.</p>
+  </div>
+
+  <div class="btn-positions">
+    <ion-button color="primary-contrast" class="whitee" (click)="toPayment()"> Complete Transaction</ion-button>
+
+    <ion-button (click)="toPayment()">Check transaction status</ion-button>
+      </div>
+</ion-content>

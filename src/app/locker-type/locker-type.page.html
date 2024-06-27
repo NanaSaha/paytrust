@@ -1,0 +1,227 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+
+
+<!-- <ion-content>
+  
+
+  <ion-slides [options]="slideOpts">
+    <ion-slide>
+      <ion-card color="primary" class="cardd">
+        <ion-card-header>
+          <ion-card-title>Completed<br>Transactions</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+         $10000
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card color="secondary" class="cardd">
+        <ion-card-header>
+          <ion-card-title>Ongoing<br>Transactions</ion-card-title>
+      
+        </ion-card-header>
+      
+        <ion-card-content>
+          $10000
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+
+  <ion-card>
+    <ion-card-header>
+      Line Chart
+    </ion-card-header>
+    <ion-card-content>
+      <canvas id="lineChart"></canvas>
+        </ion-card-content>
+  </ion-card>
+
+  
+
+  <h4 class="txtLeft">Latest Transactions</h4>
+  <hr style="border-width: 1px;">
+  <ion-grid  *ngIf="resp_code != '101'">
+    <ion-row *ngFor="let item of trans_list">
+      <ion-col size="7" >
+        <div class="engaged">
+          <p style="color: #686868">{{item.transaction_id}} <span style="font-weight:
+            600;color: rgb(93, 11, 11)">{{item.status}}</span></p>
+          <h4>{{item.transaction_title}}</h4>
+        </div>
+      </ion-col>
+      <ion-col size="5" >
+        <div class="engaged-right">
+          <p style="color: #686868">{{item.created_at | date: "mediumDate"}}</p>
+          <h4 style="color: #186a0a">${{item.amount}} </h4>
+        </div>
+      </ion-col>
+
+
+  
+
+    </ion-row>
+  </ion-grid>
+
+  <h4 style="text-align: center;" *ngIf="resp_code == '101'"> No Transaction</h4>
+
+  
+</ion-content> -->
+
+
+<ion-content>
+
+  <div class="main-sec">
+
+
+    <img src="../assets/img/pro_vec.svg" class="bottom-right-image">
+    <img src="../assets/img/pro_vec2.svg" class="top-left-image">
+    <ion-row class="moveRow">
+      <ion-col size="10">
+        <div class="imgTxblock">
+          <img src="../assets/img/profile.png" style="padding-right: 10px;">
+          <h4 class="imgTxt">Hello {{fullname}}!</h4>
+        </div>
+
+      </ion-col>
+      <ion-col size="2" (click)="seeAll()">
+        <div class="">
+          <img src="../assets/img/bell.svg" width="100%">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="text-container">
+      <p class="subFonts">Current Balance
+      </p>
+      <h3 class="headerFont">₵0.00
+      </h3>
+
+      <ion-button class="withdwBtn"  (click)="withdraw()"> <img src="../assets/img/withdraw.svg" style="padding-right: 10px;" >
+        Withdraw </ion-button> 
+    </div>
+
+  </div>
+
+  <ion-row style="padding-top: 5%;">
+    <ion-col size="6">
+      <ion-button class="whitee_g"  (click)="presentModal()"> <img src="../assets/img/convert-card.png" style="padding-right: 10px;" > New
+        Transaction </ion-button>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-button class="whitee_g" (click)="presentModal2()"> <img src="../assets/img/hook.png" style="padding-right: 10px;"> Join
+        transaction</ion-button>
+    </ion-col>
+
+  </ion-row>
+<div *ngIf="resp_code_pending != '101'">
+  <div class="forSlides">
+  <div>
+    <h4 class="txtLeft">Ongoing Transactions</h4>
+  </div>
+
+  <ion-slides [options]="slideOpts">
+    <ion-slide *ngFor="let item of trans_list_pending">
+      <div class="itemized">
+        <div class="container">
+          
+          <div class="text-content">
+          
+            <h4 class="headFont">{{item.item_name}}</h4>
+            <p class="subFontsc">₵{{item.amount}}.00</p>
+            <ion-progress-bar value=".45">
+              <ion-label slot="content">25%</ion-label>
+            </ion-progress-bar>
+          </div>
+          <img src="../assets/img/info.png">
+        </div>
+      </div>
+    </ion-slide>
+
+  
+  </ion-slides>
+
+</div>
+</div>
+
+
+<div *ngIf="resp_code != '101'">
+<div>
+
+  <ion-grid>
+    <ion-row>
+      <!-- Left Text -->
+      <ion-col size="6">
+        <span class="left-text" >Recent Transactions</span>
+
+        
+      </ion-col>
+  
+      <!-- Right Text -->
+      <ion-col size="6">
+        <span class="right-text" (click)="seeAll()">See All</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="itemized" *ngFor="let item of trans_list">
+    <div class="container" *ngIf="item.status != 'pending'">
+      <img src="../assets/img/incoming.png">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">{{item.item_name}}</h4>
+        <p class="subFontTrans">Payment received on {{item.created_at | date: 'mediumDate'}}</p>
+      </div>
+      <p class="headFontTrans">+₵{{item.amount}}</p>
+    </div>
+
+    <div class="container" *ngIf="item.status == 'pending'">
+      <img src="../assets/img/money.png">
+      <div class="text-content">
+      
+        <h4 class="headFontTrans">{{item.item_name}}</h4>
+        <p class="subFontTrans">Transaction made on {{item.created_at | date: 'mediumDate'}}</p>
+      </div>
+      <p class="headFontTrans">-₵{{item.amount}}</p>
+    </div>
+  </div> <br>
+ 
+</div>
+
+ 
+</div>
+
+<!-- <div *ngIf="trans_list?.length <= 0"> -->
+  <div *ngIf="resp_code == '101'">
+  
+  <div class="">
+    <div class="emptyTrans">
+      <img src="../assets/img/folder-cross.svg" class="crossImg">
+    </div>
+  </div>
+
+  <div>
+    <p style="text-align: center; color: #224d0e;">You have no ongoing transactions. Hit New Transaction to get started, or Join Transaction to see pending ones.
+    </p>
+  </div>
+
+</div>
+<br>
+
+
+ 
+
+
+
+
+</ion-content>

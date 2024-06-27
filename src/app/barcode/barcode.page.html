@@ -1,0 +1,62 @@
+
+
+
+
+<ion-content>
+ 
+  <div class="text-container">
+    <h3 class="headerFont">New PayTrust Transaction
+       </h3> 
+      <p class="subFonts">What is your role in this transaction?.</p>
+      </div>
+    
+
+
+ 
+  <!-- <ion-item >
+   
+    <img src="../assets/img/shopping-cart.png" style="padding-right: 10px;">
+
+  <ion-label>I am the Buyer</ion-label>
+    <ion-checkbox slot="end"></ion-checkbox>
+  </ion-item><br>
+  <ion-item>
+    <img src="../assets/img/shop.png" style="padding-right: 10px;"> <ion-label>I am the Seller</ion-label>
+    <ion-checkbox slot="end"></ion-checkbox>
+  </ion-item> <br>
+  <ion-item>
+    <img src="../assets/img/cards.png" style="padding-right: 10px;">  <ion-label>Other Transactions</ion-label>
+    <ion-checkbox slot="end"></ion-checkbox>
+  </ion-item>
+  <ion-button >Proceed</ion-button> -->
+
+
+  <ion-list>
+    <ion-radio-group (ionChange)="radioGroupChange($event)">
+      <ion-item>
+        <img src="../assets/img/shopping-cart.png" style="padding-right: 10px;">
+        <ion-label>I am the Buyer</ion-label>
+        <ion-radio slot="end" value="buyer" ></ion-radio>
+      </ion-item> <br>
+      
+      <ion-item>
+        <img src="../assets/img/shop.png" style="padding-right: 10px;">
+        <ion-label>I am the Seller</ion-label>
+        <ion-radio slot="end" value="seller" ></ion-radio>
+      </ion-item> <br>
+
+      <ion-item>
+        <img src="../assets/img/shopping-cart.png" style="padding-right: 10px;">
+        <ion-label>Other Transactions</ion-label>
+        <ion-radio slot="end" value="other"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button (click)="newTrans()" >Proceed</ion-button>
+</ion-content>
+
+
+
+
